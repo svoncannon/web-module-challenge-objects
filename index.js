@@ -7,12 +7,13 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
 function createMenuItem(name, cost, category){
-    /* Code here */
+    return {name, cost, category}
 }
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
-
-
+console.log(createMenuItem(`Tacos`, 4, `Lunch`));
+console.log(createMenuItem(`Pizza`, 7, `Lunch`));
+console.log(createMenuItem(`Milkshakes`, 6, `Drinks`));
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
@@ -130,9 +131,20 @@ The returned object should have the following characteristics:
          (1) causes the odometer in the object to be increased by the distance,
          (2) returns the updated value of the `odometer`.
 */
+const newObj = {};
 
-
-function carMaker(/* code here */) {
-    /* code here */
+function carMaker(miles) {
     
+ {
+  newObj.odometer = miles;
+  newObj.drive = function (dist) {
+    newObj.odometer = miles + dist;
+    console.log(newObj.odometer);
+    return newObj.odometer;
+  }
+  console.log(newObj);
+  return newObj;
+}
+carMaker(235);
+newObj.drive(75);
 }
